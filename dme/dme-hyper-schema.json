@@ -1,0 +1,43 @@
+{
+    "$schema": "http://dmachi.github.io/dme/schema/dme-hyper-schema.json#",
+    "id": "http://dmachi.github.io/dme/schema/dme-hyper-schema.json#",
+    "title": "DME Hyper-Schema",
+
+    "allOf": [
+        {
+            "$ref": "http://json-schema.org/draft-04/hyper-schema"
+        }
+    ],
+
+    "definitions": {
+    	"dmeLinkDescription": {
+    		"type": "object",
+    		"allOf": [
+    			{"$ref":"http://json-schema.org/draft-04/hyper-schema#/definitions/linkDescription"}
+    		],
+    		"properties": {
+    			"path": {
+    				"description": "The path defines a uri-template thas is applied only to the path portion of the URL",
+    				"type": "string"
+    			},
+    			"parseQuery": {
+    				"type": "boolean",
+    				"description": "This defines whether or not the link's query string should be decoded.  When this option is false uri-template is not applied. Should only be used if a path is provided to match the link"
+    			}
+    		}
+    	},
+    	"RQLString": {
+    		"description": "An RQL Query String (e.g., ?eq(foo,bar) )",
+    		"type": "string"
+    	}
+    },
+
+    "properties": {
+		"links": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/dmeLinkDescription"
+			}
+		}
+    }
+}

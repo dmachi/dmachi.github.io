@@ -2,7 +2,6 @@
     "$schema": "http://dmachi.github.io/dme/schema/dme-hyper-schema.json#",
     "id": "http://dmachi.github.io/dme/schema/dme-hyper-schema.json#",
     "title": "DME Hyper-Schema",
-
     "allOf": [
         {
             "$ref": "http://json-schema.org/draft-04/hyper-schema"
